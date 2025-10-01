@@ -1,3 +1,8 @@
+""" String mapping utilities for cleaning song tabs. 
+This module provides a dictionary of regex patterns and their corresponding replacements
+to standardize and clean song tab strings. """
+
+# --- Constants ---
 INTRO = "INTRO:"
 CORO = "CORO:"
 MAPPING = {

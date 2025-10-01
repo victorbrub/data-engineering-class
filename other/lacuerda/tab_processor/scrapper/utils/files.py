@@ -8,13 +8,16 @@ from attrs import asdict
 from typing import Any
 
 
-
 def check_file_exists(directory, filename):
+    """Checks if a file exists in the specified directory."""
     file_path = os.path.join(directory, filename)
     return os.path.isfile(file_path)
 
 
 def write_string_to_file(directory, file_name, text):
+    """
+    Writes a string to a file in the specified directory.
+    """
     # Ensure the directory exists
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -43,74 +46,6 @@ def delete(directory: str):
         log.info(f"Deleted existing data directory: {directory}")
     else:
         log.info(f"No existing data directory found at: {directory}")
-
-
-def save_to_csv(
-    data: list, file_path: str, file_name: str, fieldnames: list[str] = None
-):
-    """
-    Saves a list of objects (e.g., dataclasses or dictionaries) to a CSV file.
-
-    Assumes objects have a .to_dict() method if they are not already dictionaries.
-    Handles Path objects within the data by converting them to strings.
-
-    Args:
-        data (list): A list of objects to be saved. Each object should either be
-                     a dictionary or have a `.to_dict()` method returning a dict.
-        file_path (Path): The full path to the output CSV file.
-        fieldnames (list[str], optional): Explicit list of column headers. If None,
-                                          it tries to infer from the first data item's keys.
-    """
-    log.debug(f"Saving to CSV file: {file_name}")
-    if not data:
-        log.info("Data list is empty, not saving to CSV.")
-        return
-
-    file_path = f"{file_path}/{file_name}"
-    if not isinstance(file_path, Path):
-        file_path = Path(file_path)
-
-    file_path.parent.mkdir(
-        parents=True, exist_ok=True
-    )  # Ensure parent directory exists
-
-    # Prepare data for writing: ensure all items are dictionaries
-    processed_data = []
-    for item in data:
-        if hasattr(item, "to_dict") and callable(item.to_dict):
-            processed_data.append(item.to_dict())
-        elif isinstance(item, dict):
-            # If it's a dict, make a copy and ensure Path objects are stringified
-            temp_dict = item.copy()
-            for key, value in temp_dict.items():
-                if isinstance(value, Path):
-                    temp_dict[key] = str(value)
-            processed_data.append(temp_dict)
-        else:
-            print(
-                f"Warning: Item of type {type(item)} cannot be converted to dict. Skipping.",
-                file=sys.stderr,
-            )
-            continue
-
-    if not processed_data:
-        print("No processable data to save to CSV.")
-        return
-
-    # Infer fieldnames if not provided
-    if fieldnames is None:
-        fieldnames = list(processed_data[0].keys())
-
-    try:
-        with open(file_path, "w", newline="", encoding="utf-8") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(processed_data)
-        print(f"Successfully saved {len(processed_data)} items to {file_path}")
-    except IOError as e:
-        print(f"Error saving to {file_path}: {e}", file=sys.stderr)
-    except Exception as e:
-        print(f"An unexpected error occurred while saving to CSV: {e}", file=sys.stderr)
 
 
 def save_to_json(

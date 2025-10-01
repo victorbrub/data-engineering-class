@@ -70,7 +70,9 @@ class Artist:
     _id_counter = 1
 
     def __post_init__(self):
-        """Automatically assign an incremental ID after initialization."""
+        """Automatically assign an incremental ID after initialization.
+        Also fetches metadata from MusicBrainz.
+        """
         self.id = Artist._id_counter
         Artist._id_counter += 1
 

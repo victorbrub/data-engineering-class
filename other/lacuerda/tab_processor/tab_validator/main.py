@@ -25,6 +25,7 @@ file_name = str()
 
 
 def validate_song_format(song):
+    """ Validates if the song follows a basic expected format. """
     # Regex pattern for song format
     pattern = r"((?:[A-Z]+\s+)*\n.+)+"
 
@@ -38,8 +39,8 @@ def validate_song_format(song):
         return False
 
 
-def list_files_recursive(path:str ="."):
-
+def list_files_recursive(path: str = "."):
+    """ Lists all files in a directory recursively. """
     for entry in os.listdir(path):
         full_path = os.path.join(path, entry)
         if os.path.isdir(full_path):
@@ -48,6 +49,7 @@ def list_files_recursive(path:str ="."):
             dir_list.append(full_path)
 
     return dir_list
+
 
 @click.command()
 @click.option(
@@ -105,7 +107,7 @@ def main(init):
         with open(output_file, "w") as file:
             file.write(text)
             print("OKs = ", OK, "-- KOs = ", KO, "--", file_name, " CREATED!!")
-    
+
     log.info(f"OKs = {OK}, -- KOs = {KO}, --")
     end_time = datetime.datetime.now()
     log.info(f"Validator ended at {end_time}")

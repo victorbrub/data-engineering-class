@@ -40,12 +40,12 @@ def get_artists(
     start_char: str, end_char: str, selected_artist: str = None
 ) -> list[str]:
     """Scrapes artist URLs for a given range of starting letters.
-    If selected_artist is provided, only that artist is returned if found.
-
     Args:
         start_char (str): The starting letter for artists to catalog (e.g., 'a').
         end_char (str): The ending letter for artists to catalog (e.g., 'z').
         selected_artist (str, optional): Specific artist name to filter for. Defaults to None.
+    Returns:
+        list[str]: A list of Artist objects.
     """
 
     log.info("Starting to build artists catalog...")
@@ -70,7 +70,7 @@ def get_artists(
                 href = ROOT + a_tag["href"]
                 artist_display_name = (
                     Path(href).name.replace("_", " ").title()
-                )  # "David Bowie"
+                )  
                 artists.append(Artist(name=artist_display_name, url=href))
 
     return (
@@ -93,15 +93,15 @@ def get_catalog(
     selected_artist: str = None,
 ) -> list[Song]:
     """
-    Scrapes artist and song links from lacuerda.net to create a catalog of SongInfo objects.
+    Generates a catalog of artists and their songs from lacuerda.net.
     This function does NOT download lyrics, only metadata.
-
     Args:
         output_directory (Path): The base directory where lyrics would eventually be saved.
                                  Used to construct potential output_path for each song.
         start_char (str): The starting letter for artists to catalog (e.g., 'a').
         end_char (str): The ending letter for artists to catalog (e.g., 'z').
-
+        catalog_level (str): Level of cataloging - "artists" or "songs". Defaults to "artists".
+        selected_artist (str, optional): Specific artist name to filter for. Defaults to None.
     Returns:
         list[Song]: A list of Song objects representing the catalog.
     """

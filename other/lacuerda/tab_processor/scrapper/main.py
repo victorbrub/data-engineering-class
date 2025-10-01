@@ -83,8 +83,6 @@ def main(reset, update_catalog, start_char, end_char, artist):
         print("Updating json catalog.")
         files.save_to_json(catalog, CATALOG_DIRECTORY, "catalog.json")
 
-        
-
     # Get songs lyrics
     log.info("Starting to download lyrics...")
     songs.get_songs(SONGS_DIRECTORY, version=SONG_VERSION)
@@ -96,6 +94,7 @@ def main(reset, update_catalog, start_char, end_char, artist):
     print(
         f"Scrapper finished. Duration in seconds: {duration.total_seconds()}, that is {duration.total_seconds() / 60} minutes."
     )
+
 
 if __name__ == "__main__":
     main()
