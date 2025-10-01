@@ -7,7 +7,7 @@ import datetime
 import shutil
 
 INPUT_DIRECTORY = (
-    "/home/vbarcelo/repos/data-engineering-class/fundamentals/exercise2/tab_processor/files/"
+    "./files/"
 )
 CLEANED_DIRECTORY = f"{INPUT_DIRECTORY}cleaned"
 OUTPUT_DIRECTORY_OK = f"{INPUT_DIRECTORY}validations/ok"

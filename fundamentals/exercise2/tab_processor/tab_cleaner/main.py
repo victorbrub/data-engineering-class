@@ -7,7 +7,7 @@ from utils.string_mapping import MAPPING
 
 # -- Configuration ---
 INPUT_DIRECTORY = (
-    "/home/vbarcelo/repos/data-engineering-class/fundamentals/exercise2/tab_processor/files/"
+    "./files/"
 )
 CATALOG_DIRECTORY = f"{INPUT_DIRECTORY}catalogs/"
 LOGS_DIRECTORY = "./logs/"

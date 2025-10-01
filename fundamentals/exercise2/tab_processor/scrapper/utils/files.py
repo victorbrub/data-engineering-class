@@ -26,7 +26,7 @@ def write_string_to_file(directory, file_name, text):
     file_path = os.path.join(directory, file_name)
 
     # Write the string to the file
-    with open(file_path, "w") as file:
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(text)
 
 

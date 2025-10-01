@@ -6,7 +6,7 @@ import utils.songs as songs
 
 # -- Configuration ---
 OUTPUT_DIRECTORY = (
-    "/home/vbarcelo/repos/data-engineering-class/fundamentals/exercise2/tab_processor/files/"
+    "./files/"
 )
 SONGS_DIRECTORY = f"{OUTPUT_DIRECTORY}songs/"
 CATALOG_DIRECTORY = f"{OUTPUT_DIRECTORY}catalogs/"

@@ -1,18 +1,27 @@
 ## Install dependencies
 For installing needed dependencies, run `pip install -r requirements.txt`
 
-## Change the directory names
-To change the directory names, you can modify the constants defined in the `main.py` files of each module with your local paths:
-- In `scrapper/main.py`, change the `OUTPUT_DIRECTORY` variable.
-- In `tab_cleaner/main.py`, change the `INPUT_DIRECTORY` variable.
-- In `tab_validator/main.py`, change the `INPUT_DIRECTORY` variable.
+## Go to the tab_processor directory in the terminal
+To navigate to the tab_processor directory, run:
+```bash
+cd 'path/to/tab_processor'
+```
+or in vs code, right click on the `tab_processor` folder and select "Open in Integrated Terminal".
 
 ## Run the scrapper
-To run the scrapper, execute:
+To run the scrapper and reload the catalog, execute:
+
 ```bash
-python scrapper/main.py
+python scrapper/main.py -uc
 ``` 
 This will create a directory `files` with two subdirectories: `songs` and `catalogs`. The `songs` directory will contain the downloaded tabs, and the `catalogs` directory will contain the catalogs of songs.
+
+If you want to download tabs for a specific letters range, you can use the `-sc` and `-ec` options, stating or 'start char' and 'end char'. For example, to download tabs for artists starting with letters from A to C, execute:
+
+```bash
+python scrapper/main.py -sc a -ec c
+```
+
 ## Clean the tabs
 To clean the downloaded tabs, execute:
 ```bash
