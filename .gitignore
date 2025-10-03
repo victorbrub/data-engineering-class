@@ -1,3 +1,10 @@
 **files/
 **logs/
 **test/
+**solution/
+__pycache__/
+.ipynb_checkpoints
+.DS_Store
+.vscode/
+.env
+.env.*
