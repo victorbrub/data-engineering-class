@@ -1,5 +1,4 @@
 import os
-import csv
 import sys
 import logging as log
 import json
@@ -8,25 +7,62 @@ from attrs import asdict
 from typing import Any
 
 
-def check_file_exists(directory, filename):
-    """Checks if a file exists in the specified directory."""
-    file_path = os.path.join(directory, filename)
-    return os.path.isfile(file_path)
+def normalize_relative_path(path):
+    """Normalize a relative path while preserving a leading './' if present."""
+    if path.startswith("./"):
+        return "./" + os.path.normpath(path[2:])
+    else:
+        return os.path.normpath(path)
 
 
-def write_string_to_file(directory, file_name, text):
+def check_file_exists(path: str, filename: str = None) -> bool:
+    """Checks if a file exists in the specified directory.
+    If filename is None, checks if the path itself is a file.
+    Args:
+        path (str): The directory path or full file path if filename is None.
+        filename (str, optional): The name of the file to check within the directory. Defaults to None.
+    Returns:
+        bool: True if the file exists, False otherwise.
+    """
+
+    if filename is None:
+        return os.path.isfile(path)
+    else:
+        return os.path.isfile(os.path.join(path, filename))
+
+
+def safe_open(file_path, mode="w", encoding="utf-8"):
+    """Open a file for writing, creating the directory if necessary."""
+    dir_path = os.path.dirname(file_path)
+    if dir_path:  # Check if dir_path is not empty
+        os.makedirs(dir_path, exist_ok=True)
+    try:
+        return open(file_path, mode, encoding=encoding)
+    except Exception as e:
+        print(f"Failed to open {file_path}: {e}")
+
+
+def write_string_to_file(path: str, file_name: str = None, text: str = ""):
     """
     Writes a string to a file in the specified directory.
+    If file_name is None, writes to the path directly.
+    Args:
+        directory (str): The directory where the file will be saved.
+        file_name (str, optional): The name of the file. If None, 'output.txt' is used. Defaults to None.
+        text (str, optional): The string content to write to the file. Defaults to an empty string.
+    Returns:
+        None
     """
-    # Ensure the directory exists
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    # Create the full file path
-    file_path = os.path.join(directory, file_name)
+    if file_name is None:
+        file_path = path
+    else:
+        # Ensure the directory exists
+        if not os.path.exists(path):
+            os.makedirs(path)
+        file_path = os.path.join(path, file_name)
 
     # Write the string to the file
-    with open(file_path, "w", encoding="utf-8") as file:
+    with safe_open(file_path, "w", encoding="utf-8") as file:
         file.write(text)
 
 
@@ -57,7 +93,7 @@ def save_to_json(
 ):
     """
     Saves data to a JSON file. Handles various Python objects including dataclasses,
-    Path objects, and nested structures.
+    Path objects, and nested structures. If already exists, it will be overwritten.
 
     Args:
         data (Any): The data to be saved. Can be:
@@ -181,3 +217,19 @@ def load_from_json(file_path: Path, object_hook=None):
     except Exception as e:
         print(f"An unexpected error occurred while loading JSON: {e}", file=sys.stderr)
         return None
+
+
+def read_json(file_path: str) -> dict:
+    """Reads a JSON file and returns its contents as a dictionary.
+    Args:
+        file_path (str): The path to the JSON file.
+    Returns:
+        dict: The contents of the JSON file as a dictionary. Returns an empty dictionary on error
+    """
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            return data
+    except Exception as e:
+        log.error(f"Error reading catalog from {file_path}: {e}")
+        return {}

@@ -6,9 +6,7 @@ import logging as log
 import datetime
 import shutil
 
-INPUT_DIRECTORY = (
-    "./files/"
-)
+INPUT_DIRECTORY = "./files/"
 CLEANED_DIRECTORY = f"{INPUT_DIRECTORY}cleaned"
 OUTPUT_DIRECTORY_OK = f"{INPUT_DIRECTORY}validations/ok"
 OUTPUT_DIRECTORY_KO = f"{INPUT_DIRECTORY}validations/ko"
@@ -25,7 +23,7 @@ file_name = str()
 
 
 def validate_song_format(song):
-    """ Validates if the song follows a basic expected format. """
+    """Validates if the song follows a basic expected format."""
     # Regex pattern for song format
     pattern = r"((?:[A-Z]+\s+)*\n.+)+"
 
@@ -40,7 +38,7 @@ def validate_song_format(song):
 
 
 def list_files_recursive(path: str = "."):
-    """ Lists all files in a directory recursively. """
+    """Lists all files in a directory recursively."""
     for entry in os.listdir(path):
         full_path = os.path.join(path, entry)
         if os.path.isdir(full_path):

@@ -6,9 +6,7 @@ import datetime
 from utils.string_mapping import MAPPING
 
 # -- Configuration ---
-INPUT_DIRECTORY = (
-    "./files/"
-)
+INPUT_DIRECTORY = "./files/"
 CATALOG_DIRECTORY = f"{INPUT_DIRECTORY}catalogs/"
 LOGS_DIRECTORY = "./logs/"
 

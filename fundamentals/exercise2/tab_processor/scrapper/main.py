@@ -5,11 +5,7 @@ import utils.files as files
 import utils.songs as songs
 
 # -- Configuration ---
-OUTPUT_DIRECTORY = (
-    "./files/"
-)
-SONGS_DIRECTORY = f"{OUTPUT_DIRECTORY}songs/"
-CATALOG_DIRECTORY = f"{OUTPUT_DIRECTORY}catalogs/"
+OUTPUT_DIRECTORY = "./files/"
 LOGS_DIRECTORY = "./logs/"
 ROOT = "https://acordes.lacuerda.net"
 URL_ARTIST_INDEX = f"{ROOT}/tabs/"
@@ -29,9 +25,7 @@ log.basicConfig(
 )
 
 
-# --- Logic---
-
-
+# --- Logic --------------------
 @click.command()
 @click.option(
     "-r",
@@ -45,55 +39,47 @@ log.basicConfig(
     "--update_catalog",
     is_flag=True,
     default=False,
-    help="Regenerates the catalogs.",
+    help="Regenerates the catalog.",
 )
-@click.option("--start_char", "-sc", default="a", help="Starting letter for artists.")
-@click.option("--end_char", "-ec", default="z", help="Ending letter for artists.")
-@click.option("--artist", "-a", default=None, help="Specific artist to process.")
-def main(reset, update_catalog, start_char, end_char, artist):
+@click.option(
+    "--start_char", "-sc", default="a", help="Starting letter for updating the catalog."
+)
+@click.option(
+    "--end_char", "-ec", default="z", help="Ending letter for updating the catalog."
+)
+def main(reset, update_catalog, start_char, end_char):
+    """Main function to run the scrapper. Can reset data, update catalog, or fetch songs."""
+    print("Starting scrapper...")
 
     # Start time tracking
     start_time = datetime.datetime.now()
     log.info(f"Scrapper started at {start_time}")
-    print("Starting scrapper...")
 
+    # Reset data if required
     if reset:
+        log.info("Remove all downloaded files. Fresh start...")
         files.delete(OUTPUT_DIRECTORY)
-        log.info("Fresh start...")
 
-    if update_catalog:
-        files.delete(CATALOG_DIRECTORY)
+    # Update catalog if required
+    if update_catalog or not files.check_file_exists(OUTPUT_DIRECTORY, "catalog.json"):
+        log.info("Updating catalog...")
         catalog = songs.get_catalog(
-            SONGS_DIRECTORY,
-            catalog_level="songs",
+            OUTPUT_DIRECTORY,
             start_char=start_char,
             end_char=end_char,
-            selected_artist=artist,
         )
+        files.save_to_json(catalog, OUTPUT_DIRECTORY, "catalog.json")
+        log.info("Catalog updated.")
 
-        # Save Artist Catalog
-        print("Updating artist catalog.")
-        files.save_to_json(
-            [x.to_dict_no_songs() for x in catalog],
-            CATALOG_DIRECTORY,
-            "artist_catalog.json",
-        )
-
-        # Save Full Catalog
-        print("Updating json catalog.")
-        files.save_to_json(catalog, CATALOG_DIRECTORY, "catalog.json")
+        return 200
 
     # Get songs lyrics
-    log.info("Starting to download lyrics...")
-    songs.get_songs(SONGS_DIRECTORY, version=SONG_VERSION)
+    log.info(f"Starting to download lyrics...")
+    songs.get_songs(OUTPUT_DIRECTORY, version=SONG_VERSION)
 
-    end_time = datetime.datetime.now()
-    log.info(f"Scrapper ended at {end_time}")
-    duration = end_time - start_time
+    duration = datetime.datetime.now() - start_time
     log.info(f"Total duration: {duration}")
-    print(
-        f"Scrapper finished. Duration in seconds: {duration.total_seconds()}, that is {duration.total_seconds() / 60} minutes."
-    )
+    print(f"Scrapper finished. Duration in seconds: {duration.total_seconds()}.")
 
 
 if __name__ == "__main__":

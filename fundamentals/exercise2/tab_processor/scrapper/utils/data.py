@@ -1,6 +1,7 @@
+import musicbrainzngs
+import utils.files as files
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
-import musicbrainzngs
 
 # --- Config ---
 
@@ -11,6 +12,16 @@ musicbrainzngs.set_useragent("MyMusicApp", "1.0", "myemail@example.com")
 # --- Data Structures ---
 @dataclass
 class Song:
+    """Represents a song with its metadata.
+
+    Attributes:
+        id (int): Auto-generated unique identifier for the song.
+        song_title (str): The title of the song.
+        song_url (str): The URL to the song's page on lacuerda.net.
+        genre (str): The genre of the song (if available).
+        lyrics_path (Path): The local file path where the song's lyrics are stored.
+    """
+
     id: int = field(init=False)  # Auto-generated ID
     song_title: str
     song_url: str
@@ -24,6 +35,8 @@ class Song:
         """Automatically assign an incremental ID after initialization."""
         self.id = Song._id_counter
         Song._id_counter += 1
+
+        self.lyrics_path = files.normalize_relative_path(self.lyrics_path)
 
     def to_dict(self):
         return asdict(self)
@@ -55,7 +68,16 @@ class Song:
 
 @dataclass
 class Artist:
-    """Represents an artist with their name, URL, and a list of their songs."""
+    """Represents an artist with their name, URL, and a list of their songs.
+
+    Attributes:
+        id (int): Auto-generated unique identifier for the artist.
+        name (str): The artist's name.
+        url (str): The URL to the artist's page on lacuerda.net.
+        genres (list[str]): List of genres/tags associated with the artist.
+        albums (list[str]): List of album titles by the artist.
+        songs (list[Song]): List of Song objects associated with the artist.
+    """
 
     id: int = field(init=False)  # Auto-generated ID
     name: str
