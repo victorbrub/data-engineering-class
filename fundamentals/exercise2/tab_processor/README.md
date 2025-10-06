@@ -12,9 +12,9 @@ or in vs code, right click on the `tab_processor` folder and select "Open in Int
 To run the scrapper and reload the catalog, execute:
 
 ```bash
-python scrapper/main.py -uc
+python scrapper/main.py
 ``` 
-This will create a directory `files` with two subdirectories: `songs` and `catalogs`. The `songs` directory will contain the downloaded tabs, and the `catalogs` directory will contain the catalogs of songs.
+This will create a directory `files`. A `catalog.json` will be created inside, and a `songs` directory will be created. The `songs` directory will contain the downloaded tabs, and the `catalogs` directory will contain the catalogs of songs.
 
 If you want to download tabs for a specific letters range, you can use the `-sc` and `-ec` options, stating or 'start char' and 'end char'. For example, to download tabs for artists starting with letters from A to C, execute:
 
