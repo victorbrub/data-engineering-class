@@ -196,54 +196,57 @@ def get_songs(output_directory: str, version: int = 0):
     # 4. If not, fetch the lyrics and save to the appropriate path
 
     # -------------------- OLD CODE --------------------#
-    output_directory = output_directory + "songs/"
-    for i in INDEX:
+    # output_directory = output_directory + "songs/"
+    # for i in INDEX:
 
-        artist_index_url = URL_ARTIST_INDEX + "/" + i
+    #     artist_index_url = URL_ARTIST_INDEX + "/" + i
 
-        lis = bs.get_soup(artist_index_url).find("ul").findAll("li")
+    #     lis = bs.get_soup(artist_index_url).find("ul").findAll("li")
 
-        artists_urls = []
-        for li in lis:
-            href = ROOT + li.find("a")["href"]
-            if href is not None:
-                artists_urls.append(href)
+    #     artists_urls = []
+    #     for li in lis:
+    #         href = ROOT + li.find("a")["href"]
+    #         if href is not None:
+    #             artists_urls.append(href)
 
-        for url in artists_urls:
-            artist = str(url).replace(ROOT, "").replace("/", "")
-            artist_dir = output_directory + f"/{i}/{artist}"
-            log.info("artist--> %s - url --> %s", artist, url)
+    #     for url in artists_urls:
+    #         artist = str(url).replace(ROOT, "").replace("/", "")
+    #         artist_dir = output_directory + f"/{i}/{artist}"
+    #         log.info("artist--> %s - url --> %s", artist, url)
 
-            lis = bs.get_soup(url).findAll("li")
+    #         lis = bs.get_soup(url).findAll("li")
 
-            song_urls = []
+    #         song_urls = []
 
-            for li in lis:
-                if 'id="r' in str(li):
-                    href = url + li.find("a")["href"] + ".shtml"
-                    if href is not None:
-                        song_urls.append(href)
+    #         for li in lis:
+    #             if 'id="r' in str(li):
+    #                 href = url + li.find("a")["href"] + ".shtml"
+    #                 if href is not None:
+    #                     song_urls.append(href)
 
-            for song_url in song_urls:
+    #         for song_url in song_urls:
 
-                song_url, song_name = get_version(song_url, version)
-                song_file_path = f"{artist_dir}/{song_name}"
+    #             song_url, song_name = get_version(song_url, version)
+    #             song_file_path = f"{artist_dir}/{song_name}"
 
-                try:
-                    if get_song_lyrics(song_name, song_url, song_file_path):
-                        time.sleep(0.5)  # Be polite and avoid hammering the server
-                    else:
-                        log.info(
-                            f"Skipping download for existing file: {song_file_path}"
-                        )
-                        continue
-                except Exception as e:
-                    log.error(f"Error fetching song from {song_url}: {e}")
-                    continue
+    #             try:
+    #                 if get_song_lyrics(song_name, song_url, song_file_path):
+    #                     time.sleep(0.5)  # Be polite and avoid hammering the server
+    #                 else:
+    #                     log.info(
+    #                         f"Skipping download for existing file: {song_file_path}"
+    #                     )
+    #                     continue
+    #             except Exception as e:
+    #                 log.error(f"Error fetching song from {song_url}: {e}")
+    #                 continue
     # -------------------- OLD CODE --------------------#
     # -------------------- NEW CODE --------------------#
-    # catalog = files.load_from_json(path=f"{output_directory}catalog.json")
-    # for artist in catalog:
-    #     for song in artist.songs:
-    #       ... your code here ...
+    # Override this
+    catalog = files.load_from_json(Path(f"{output_directory}catalog.json"))
+    for artist in catalog:
+        for song in artist["songs"]:
+
+            print("song_name ----> ",song["song_title"])
+            input("press enter to continue...")
     # -------------------- NEW CODE --------------------#
