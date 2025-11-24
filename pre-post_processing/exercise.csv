@@ -1,0 +1,22 @@
+OrderID,CustomerName,Email,Phone,Country,OrderDate,Quantity,Price,CustomerAge,OrderStatus
+1001,John Doe,john@email.com,555-1234,USA,2023-01-15,5,19.99,28,Completed
+1002,jane smith,JANE@GMAIL.COM,555-2345,united states,2023-01-16,2,49.99,35,Completed
+1003,john doe,john@email.com,555-1234,USA,2023-01-15,5,19.99,28,Completed
+1004,Bob Johnson, bob.j@email.com ,555-3456,US,2023-01-17,-1,99.99,45,Pending
+1005,Alice Brown,alice@email.com,,,Canada,2023-01-18,10,29.99,62,Shipped
+1006,Charlie Davis,,555-5678,UK,2023-02-19,3,79.99,unknown,Completed
+1007,David Miller,david@email.com,555-6789,GB,2023-02-20,1,199.99,-5,Processing
+1008,Eve Wilson,EVE.WILSON@YAHOO.COM,555 7890,USA,2023/02/21,7,14.99,29,Completed
+1009,Frank Thomas,frank.thomas@email,,USA,2023-02-22,4,39.99,999,Returned
+1010,Grace Lee,grace@email.com,555-8901,usa,2023-02-23,2,59.99,31,Completed
+1011,Henry Martinez,henry@email.com,invalid_email,USA,2023-02-24,0,29.99,48,Cancelled
+1012,Grace Lee,grace@email.com,555-8901,USA,2023-02-23,2,59.99,31,Completed
+1013,Iris Anderson,iris@email.com,555-9012,US,03/01/2023,5,44.99,26,Pending
+1014,Jack Robinson,,555-1111,USA,2023-03-02,3,89.99,33,Completed
+1015,Karen White,karen@email.com,555-2222,United Kingdom,2023-03-03,2,34.99,41,Shipped
+1016,Liam Harris,liam@email.com,555-3333,USA,2023-03-04,1,,52,Completed
+1017,Mia Taylor,mia.taylor@email.com,555-4444,USA,2023-03-05,6,24.99,27,Completed
+1018,Noah Jackson,noah@email.com,555-5555,USA,2023-03-06,0,69.99,38,Pending
+1019,Olivia Martin,olivia@email.com,555-6666,us,2023-03-07,2,19.99,29,Completed
+1020,Peter Clark,,555-7777,USA,2023-03-08,4,44.99,,Completed
+1021,Antonio,antonio@email.com,555-7777,USA,2023-03-08,40000,440000.99,,Completed
