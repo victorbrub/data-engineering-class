@@ -1,0 +1,377 @@
+check_date,data_dimension,check_name,check_type,total_records,passed_records,failed_records,pass_rate,severity,issue_description
+2024-01-07,Completeness,Customer ID Not Null,null_check,7,6,1,85.71,medium,1 order missing customer_id
+2024-01-07,Completeness,Customer Email Not Null,null_check,7,6,1,85.71,medium,1 order missing customer_email
+2024-01-07,Completeness,Product ID Not Null,null_check,7,7,0,100.00,high,All product IDs present
+2024-01-07,Accuracy,Email Format Validation,format_check,7,7,0,100.00,medium,All emails have valid format
+2024-01-07,Accuracy,Total Amount Calculation,calculation_check,7,7,0,100.00,high,All amounts match quantity * unit_price
+2024-01-07,Consistency,Order Status Valid Values,domain_check,7,7,0,100.00,medium,All statuses are valid
+2024-01-07,Consistency,Payment Method Valid Values,domain_check,7,7,0,100.00,low,All payment methods are valid
+2024-01-07,Timeliness,Recent Orders (Last 30 Days),freshness_check,7,7,0,100.00,medium,All orders are recent
+2024-01-14,Completeness,Customer ID Not Null,null_check,10,9,1,90.00,medium,1 order missing customer_id
+2024-01-14,Completeness,Customer Email Not Null,null_check,10,9,1,90.00,medium,1 order missing customer_email
+2024-01-14,Completeness,Product ID Not Null,null_check,10,10,0,100.00,high,All product IDs present
+2024-01-14,Accuracy,Email Format Validation,format_check,10,10,0,100.00,medium,All emails have valid format
+2024-01-14,Accuracy,Total Amount Calculation,calculation_check,10,10,0,100.00,high,All amounts match quantity * unit_price
+2024-01-14,Consistency,Order Status Valid Values,domain_check,10,10,0,100.00,medium,All statuses are valid
+2024-01-14,Consistency,Payment Method Valid Values,domain_check,10,10,0,100.00,low,All payment methods are valid
+2024-01-14,Timeliness,Recent Orders (Last 30 Days),freshness_check,10,10,0,100.00,medium,All orders are recent
+2024-01-21,Completeness,Customer ID Not Null,null_check,12,11,1,91.67,medium,1 order missing customer_id
+2024-01-21,Completeness,Customer Email Not Null,null_check,12,11,1,91.67,medium,1 order missing customer_email
+2024-01-21,Completeness,Product ID Not Null,null_check,12,12,0,100.00,high,All product IDs present
+2024-01-21,Accuracy,Email Format Validation,format_check,12,12,0,100.00,medium,All emails have valid format
+2024-01-21,Accuracy,Total Amount Calculation,calculation_check,12,12,0,100.00,high,All amounts match quantity * unit_price
+2024-01-21,Consistency,Order Status Valid Values,domain_check,12,12,0,100.00,medium,All statuses are valid
+2024-01-21,Consistency,Payment Method Valid Values,domain_check,12,12,0,100.00,low,All payment methods are valid
+2024-01-21,Timeliness,Recent Orders (Last 30 Days),freshness_check,12,12,0,100.00,medium,All orders are recent
+2024-01-28,Completeness,Customer ID Not Null,null_check,15,14,1,93.33,medium,1 order missing customer_id
+2024-01-28,Completeness,Customer Email Not Null,null_check,15,14,1,93.33,medium,1 order missing customer_email
+2024-01-28,Completeness,Product ID Not Null,null_check,15,15,0,100.00,high,All product IDs present
+2024-01-28,Accuracy,Email Format Validation,format_check,15,15,0,100.00,medium,All emails have valid format
+2024-01-28,Accuracy,Total Amount Calculation,calculation_check,15,15,0,100.00,high,All amounts match quantity * unit_price
+2024-01-28,Consistency,Order Status Valid Values,domain_check,15,15,0,100.00,medium,All statuses are valid
+2024-01-28,Consistency,Payment Method Valid Values,domain_check,15,15,0,100.00,low,All payment methods are valid
+2024-01-28,Timeliness,Recent Orders (Last 30 Days),freshness_check,15,15,0,100.00,medium,All orders are recent
+2024-02-04,Completeness,Customer ID Not Null,null_check,17,16,1,94.12,medium,1 order missing customer_id
+2024-02-04,Completeness,Customer Email Not Null,null_check,17,16,1,94.12,medium,1 order missing customer_email
+2024-02-04,Completeness,Product ID Not Null,null_check,17,17,0,100.00,high,All product IDs present
+2024-02-04,Accuracy,Email Format Validation,format_check,17,17,0,100.00,medium,All emails have valid format
+2024-02-04,Accuracy,Total Amount Calculation,calculation_check,17,17,0,100.00,high,All amounts match quantity * unit_price
+2024-02-04,Consistency,Order Status Valid Values,domain_check,17,17,0,100.00,medium,All statuses are valid
+2024-02-04,Consistency,Payment Method Valid Values,domain_check,17,17,0,100.00,low,All payment methods are valid
+2024-02-04,Timeliness,Recent Orders (Last 30 Days),freshness_check,17,14,3,82.35,medium,3 orders older than 30 days
+2024-02-11,Completeness,Customer ID Not Null,null_check,20,19,1,95.00,medium,1 order missing customer_id
+2024-02-11,Completeness,Customer Email Not Null,null_check,20,19,1,95.00,medium,1 order missing customer_email
+2024-02-11,Completeness,Product ID Not Null,null_check,20,19,1,95.00,high,1 order missing product_id
+2024-02-11,Accuracy,Email Format Validation,format_check,20,20,0,100.00,medium,All emails have valid format
+2024-02-11,Accuracy,Total Amount Calculation,calculation_check,20,20,0,100.00,high,All amounts match quantity * unit_price
+2024-02-11,Consistency,Order Status Valid Values,domain_check,20,20,0,100.00,medium,All statuses are valid
+2024-02-11,Consistency,Payment Method Valid Values,domain_check,20,20,0,100.00,low,All payment methods are valid
+2024-02-11,Timeliness,Recent Orders (Last 30 Days),freshness_check,20,16,4,80.00,medium,4 orders older than 30 days
+2024-02-18,Completeness,Customer ID Not Null,null_check,22,21,1,95.45,medium,1 order missing customer_id
+2024-02-18,Completeness,Customer Email Not Null,null_check,22,21,1,95.45,medium,1 order missing customer_email
+2024-02-18,Completeness,Product ID Not Null,null_check,22,21,1,95.45,high,1 order missing product_id
+2024-02-18,Accuracy,Email Format Validation,format_check,22,22,0,100.00,medium,All emails have valid format
+2024-02-18,Accuracy,Total Amount Calculation,calculation_check,22,22,0,100.00,high,All amounts match quantity * unit_price
+2024-02-18,Consistency,Order Status Valid Values,domain_check,22,22,0,100.00,medium,All statuses are valid
+2024-02-18,Consistency,Payment Method Valid Values,domain_check,22,22,0,100.00,low,All payment methods are valid
+2024-02-18,Timeliness,Recent Orders (Last 30 Days),freshness_check,22,18,4,81.82,medium,4 orders older than 30 days
+2024-02-25,Completeness,Customer ID Not Null,null_check,25,24,1,96.00,medium,1 order missing customer_id
+2024-02-25,Completeness,Customer Email Not Null,null_check,25,24,1,96.00,medium,1 order missing customer_email
+2024-02-25,Completeness,Product ID Not Null,null_check,25,24,1,96.00,high,1 order missing product_id
+2024-02-25,Accuracy,Email Format Validation,format_check,25,25,0,100.00,medium,All emails have valid format
+2024-02-25,Accuracy,Total Amount Calculation,calculation_check,25,25,0,100.00,high,All amounts match quantity * unit_price
+2024-02-25,Consistency,Order Status Valid Values,domain_check,25,25,0,100.00,medium,All statuses are valid
+2024-02-25,Consistency,Payment Method Valid Values,domain_check,25,25,0,100.00,low,All payment methods are valid
+2024-02-25,Timeliness,Recent Orders (Last 30 Days),freshness_check,25,20,5,80.00,medium,5 orders older than 30 days
+2024-03-03,Completeness,Customer ID Not Null,null_check,27,26,1,96.30,medium,1 order missing customer_id
+2024-03-03,Completeness,Customer Email Not Null,null_check,27,26,1,96.30,medium,1 order missing customer_email
+2024-03-03,Completeness,Product ID Not Null,null_check,27,26,1,96.30,high,1 order missing product_id
+2024-03-03,Accuracy,Email Format Validation,format_check,27,27,0,100.00,medium,All emails have valid format
+2024-03-03,Accuracy,Total Amount Calculation,calculation_check,27,27,0,100.00,high,All amounts match quantity * unit_price
+2024-03-03,Consistency,Order Status Valid Values,domain_check,27,27,0,100.00,medium,All statuses are valid
+2024-03-03,Consistency,Payment Method Valid Values,domain_check,27,27,0,100.00,low,All payment methods are valid
+2024-03-03,Timeliness,Recent Orders (Last 30 Days),freshness_check,27,21,6,77.78,medium,6 orders older than 30 days
+2024-03-10,Completeness,Customer ID Not Null,null_check,30,29,1,96.67,medium,1 order missing customer_id
+2024-03-10,Completeness,Customer Email Not Null,null_check,30,29,1,96.67,medium,1 order missing customer_email
+2024-03-10,Completeness,Product ID Not Null,null_check,30,29,1,96.67,high,1 order missing product_id
+2024-03-10,Accuracy,Email Format Validation,format_check,30,30,0,100.00,medium,All emails have valid format
+2024-03-10,Accuracy,Total Amount Calculation,calculation_check,30,30,0,100.00,high,All amounts match quantity * unit_price
+2024-03-10,Consistency,Order Status Valid Values,domain_check,30,30,0,100.00,medium,All statuses are valid
+2024-03-10,Consistency,Payment Method Valid Values,domain_check,30,30,0,100.00,low,All payment methods are valid
+2024-03-10,Timeliness,Recent Orders (Last 30 Days),freshness_check,30,23,7,76.67,medium,7 orders older than 30 days
+2024-03-17,Completeness,Customer ID Not Null,null_check,32,31,1,96.88,medium,1 order missing customer_id
+2024-03-17,Completeness,Customer Email Not Null,null_check,32,31,1,96.88,medium,1 order missing customer_email
+2024-03-17,Completeness,Product ID Not Null,null_check,32,31,1,96.88,high,1 order missing product_id
+2024-03-17,Accuracy,Email Format Validation,format_check,32,32,0,100.00,medium,All emails have valid format
+2024-03-17,Accuracy,Total Amount Calculation,calculation_check,32,32,0,100.00,high,All amounts match quantity * unit_price
+2024-03-17,Consistency,Order Status Valid Values,domain_check,32,32,0,100.00,medium,All statuses are valid
+2024-03-17,Consistency,Payment Method Valid Values,domain_check,32,32,0,100.00,low,All payment methods are valid
+2024-03-17,Timeliness,Recent Orders (Last 30 Days),freshness_check,32,25,7,78.13,medium,7 orders older than 30 days
+2024-03-24,Completeness,Customer ID Not Null,null_check,35,34,1,97.14,medium,1 order missing customer_id
+2024-03-24,Completeness,Customer Email Not Null,null_check,35,34,1,97.14,medium,1 order missing customer_email
+2024-03-24,Completeness,Product ID Not Null,null_check,35,34,1,97.14,high,1 order missing product_id
+2024-03-24,Accuracy,Email Format Validation,format_check,35,35,0,100.00,medium,All emails have valid format
+2024-03-24,Accuracy,Total Amount Calculation,calculation_check,35,35,0,100.00,high,All amounts match quantity * unit_price
+2024-03-24,Consistency,Order Status Valid Values,domain_check,35,35,0,100.00,medium,All statuses are valid
+2024-03-24,Consistency,Payment Method Valid Values,domain_check,35,35,0,100.00,low,All payment methods are valid
+2024-03-24,Timeliness,Recent Orders (Last 30 Days),freshness_check,35,28,7,80.00,medium,7 orders older than 30 days
+2024-03-31,Completeness,Customer ID Not Null,null_check,38,36,2,94.74,medium,2 orders missing customer_id
+2024-03-31,Completeness,Customer Email Not Null,null_check,38,36,2,94.74,medium,2 orders missing customer_email
+2024-03-31,Completeness,Product ID Not Null,null_check,38,37,1,97.37,high,1 order missing product_id
+2024-03-31,Accuracy,Email Format Validation,format_check,38,37,1,97.37,medium,1 email with invalid format
+2024-03-31,Accuracy,Total Amount Calculation,calculation_check,38,38,0,100.00,high,All amounts match quantity * unit_price
+2024-03-31,Consistency,Order Status Valid Values,domain_check,38,38,0,100.00,medium,All statuses are valid
+2024-03-31,Consistency,Payment Method Valid Values,domain_check,38,38,0,100.00,low,All payment methods are valid
+2024-03-31,Timeliness,Recent Orders (Last 30 Days),freshness_check,38,30,8,78.95,medium,8 orders older than 30 days
+2024-04-07,Completeness,Customer ID Not Null,null_check,40,38,2,95.00,medium,2 orders missing customer_id
+2024-04-07,Completeness,Customer Email Not Null,null_check,40,38,2,95.00,medium,2 orders missing customer_email
+2024-04-07,Completeness,Product ID Not Null,null_check,40,39,1,97.50,high,1 order missing product_id
+2024-04-07,Accuracy,Email Format Validation,format_check,40,39,1,97.50,medium,1 email with invalid format
+2024-04-07,Accuracy,Total Amount Calculation,calculation_check,40,40,0,100.00,high,All amounts match quantity * unit_price
+2024-04-07,Consistency,Order Status Valid Values,domain_check,40,40,0,100.00,medium,All statuses are valid
+2024-04-07,Consistency,Payment Method Valid Values,domain_check,40,40,0,100.00,low,All payment methods are valid
+2024-04-07,Timeliness,Recent Orders (Last 30 Days),freshness_check,40,31,9,77.50,medium,9 orders older than 30 days
+2024-04-14,Completeness,Customer ID Not Null,null_check,42,40,2,95.24,medium,2 orders missing customer_id
+2024-04-14,Completeness,Customer Email Not Null,null_check,42,40,2,95.24,medium,2 orders missing customer_email
+2024-04-14,Completeness,Product ID Not Null,null_check,42,41,1,97.62,high,1 order missing product_id
+2024-04-14,Accuracy,Email Format Validation,format_check,42,41,1,97.62,medium,1 email with invalid format
+2024-04-14,Accuracy,Total Amount Calculation,calculation_check,42,42,0,100.00,high,All amounts match quantity * unit_price
+2024-04-14,Consistency,Order Status Valid Values,domain_check,42,42,0,100.00,medium,All statuses are valid
+2024-04-14,Consistency,Payment Method Valid Values,domain_check,42,42,0,100.00,low,All payment methods are valid
+2024-04-14,Timeliness,Recent Orders (Last 30 Days),freshness_check,42,33,9,78.57,medium,9 orders older than 30 days
+2024-04-21,Completeness,Customer ID Not Null,null_check,45,43,2,95.56,medium,2 orders missing customer_id
+2024-04-21,Completeness,Customer Email Not Null,null_check,45,43,2,95.56,medium,2 orders missing customer_email
+2024-04-21,Completeness,Product ID Not Null,null_check,45,44,1,97.78,high,1 order missing product_id
+2024-04-21,Accuracy,Email Format Validation,format_check,45,44,1,97.78,medium,1 email with invalid format
+2024-04-21,Accuracy,Total Amount Calculation,calculation_check,45,45,0,100.00,high,All amounts match quantity * unit_price
+2024-04-21,Consistency,Order Status Valid Values,domain_check,45,45,0,100.00,medium,All statuses are valid
+2024-04-21,Consistency,Payment Method Valid Values,domain_check,45,45,0,100.00,low,All payment methods are valid
+2024-04-21,Timeliness,Recent Orders (Last 30 Days),freshness_check,45,35,10,77.78,medium,10 orders older than 30 days
+2024-04-28,Completeness,Customer ID Not Null,null_check,48,46,2,95.83,medium,2 orders missing customer_id
+2024-04-28,Completeness,Customer Email Not Null,null_check,48,46,2,95.83,medium,2 orders missing customer_email
+2024-04-28,Completeness,Product ID Not Null,null_check,48,47,1,97.92,high,1 order missing product_id
+2024-04-28,Accuracy,Email Format Validation,format_check,48,47,1,97.92,medium,1 email with invalid format
+2024-04-28,Accuracy,Total Amount Calculation,calculation_check,48,48,0,100.00,high,All amounts match quantity * unit_price
+2024-04-28,Consistency,Order Status Valid Values,domain_check,48,48,0,100.00,medium,All statuses are valid
+2024-04-28,Consistency,Payment Method Valid Values,domain_check,48,48,0,100.00,low,All payment methods are valid
+2024-04-28,Timeliness,Recent Orders (Last 30 Days),freshness_check,48,38,10,79.17,medium,10 orders older than 30 days
+2024-05-05,Completeness,Customer ID Not Null,null_check,50,48,2,96.00,medium,2 orders missing customer_id
+2024-05-05,Completeness,Customer Email Not Null,null_check,50,48,2,96.00,medium,2 orders missing customer_email
+2024-05-05,Completeness,Product ID Not Null,null_check,50,49,1,98.00,high,1 order missing product_id
+2024-05-05,Accuracy,Email Format Validation,format_check,50,49,1,98.00,medium,1 email with invalid format
+2024-05-05,Accuracy,Total Amount Calculation,calculation_check,50,50,0,100.00,high,All amounts match quantity * unit_price
+2024-05-05,Consistency,Order Status Valid Values,domain_check,50,50,0,100.00,medium,All statuses are valid
+2024-05-05,Consistency,Payment Method Valid Values,domain_check,50,50,0,100.00,low,All payment methods are valid
+2024-05-05,Timeliness,Recent Orders (Last 30 Days),freshness_check,50,40,10,80.00,medium,10 orders older than 30 days
+2024-05-12,Completeness,Customer ID Not Null,null_check,52,50,2,96.15,medium,2 orders missing customer_id
+2024-05-12,Completeness,Customer Email Not Null,null_check,52,50,2,96.15,medium,2 orders missing customer_email
+2024-05-12,Completeness,Product ID Not Null,null_check,52,51,1,98.08,high,1 order missing product_id
+2024-05-12,Accuracy,Email Format Validation,format_check,52,51,1,98.08,medium,1 email with invalid format
+2024-05-12,Accuracy,Total Amount Calculation,calculation_check,52,52,0,100.00,high,All amounts match quantity * unit_price
+2024-05-12,Consistency,Order Status Valid Values,domain_check,52,52,0,100.00,medium,All statuses are valid
+2024-05-12,Consistency,Payment Method Valid Values,domain_check,52,52,0,100.00,low,All payment methods are valid
+2024-05-12,Timeliness,Recent Orders (Last 30 Days),freshness_check,52,41,11,78.85,medium,11 orders older than 30 days
+2024-05-19,Completeness,Customer ID Not Null,null_check,55,53,2,96.36,medium,2 orders missing customer_id
+2024-05-19,Completeness,Customer Email Not Null,null_check,55,53,2,96.36,medium,2 orders missing customer_email
+2024-05-19,Completeness,Product ID Not Null,null_check,55,54,1,98.18,high,1 order missing product_id
+2024-05-19,Accuracy,Email Format Validation,format_check,55,54,1,98.18,medium,1 email with invalid format
+2024-05-19,Accuracy,Total Amount Calculation,calculation_check,55,55,0,100.00,high,All amounts match quantity * unit_price
+2024-05-19,Consistency,Order Status Valid Values,domain_check,55,55,0,100.00,medium,All statuses are valid
+2024-05-19,Consistency,Payment Method Valid Values,domain_check,55,55,0,100.00,low,All payment methods are valid
+2024-05-19,Timeliness,Recent Orders (Last 30 Days),freshness_check,55,43,12,78.18,medium,12 orders older than 30 days
+2024-05-26,Completeness,Customer ID Not Null,null_check,58,56,2,96.55,medium,2 orders missing customer_id
+2024-05-26,Completeness,Customer Email Not Null,null_check,58,56,2,96.55,medium,2 orders missing customer_email
+2024-05-26,Completeness,Product ID Not Null,null_check,58,57,1,98.28,high,1 order missing product_id
+2024-05-26,Accuracy,Email Format Validation,format_check,58,57,1,98.28,medium,1 email with invalid format
+2024-05-26,Accuracy,Total Amount Calculation,calculation_check,58,58,0,100.00,high,All amounts match quantity * unit_price
+2024-05-26,Consistency,Order Status Valid Values,domain_check,58,58,0,100.00,medium,All statuses are valid
+2024-05-26,Consistency,Payment Method Valid Values,domain_check,58,58,0,100.00,low,All payment methods are valid
+2024-05-26,Timeliness,Recent Orders (Last 30 Days),freshness_check,58,46,12,79.31,medium,12 orders older than 30 days
+2024-06-02,Completeness,Customer ID Not Null,null_check,60,57,3,95.00,medium,3 orders missing customer_id
+2024-06-02,Completeness,Customer Email Not Null,null_check,60,57,3,95.00,medium,3 orders missing customer_email
+2024-06-02,Completeness,Product ID Not Null,null_check,60,59,1,98.33,high,1 order missing product_id
+2024-06-02,Accuracy,Email Format Validation,format_check,60,59,1,98.33,medium,1 email with invalid format
+2024-06-02,Accuracy,Total Amount Calculation,calculation_check,60,60,0,100.00,high,All amounts match quantity * unit_price
+2024-06-02,Consistency,Order Status Valid Values,domain_check,60,60,0,100.00,medium,All statuses are valid
+2024-06-02,Consistency,Payment Method Valid Values,domain_check,60,60,0,100.00,low,All payment methods are valid
+2024-06-02,Timeliness,Recent Orders (Last 30 Days),freshness_check,60,48,12,80.00,medium,12 orders older than 30 days
+2024-06-09,Completeness,Customer ID Not Null,null_check,62,59,3,95.16,medium,3 orders missing customer_id
+2024-06-09,Completeness,Customer Email Not Null,null_check,62,59,3,95.16,medium,3 orders missing customer_email
+2024-06-09,Completeness,Product ID Not Null,null_check,62,61,1,98.39,high,1 order missing product_id
+2024-06-09,Accuracy,Email Format Validation,format_check,62,61,1,98.39,medium,1 email with invalid format
+2024-06-09,Accuracy,Total Amount Calculation,calculation_check,62,62,0,100.00,high,All amounts match quantity * unit_price
+2024-06-09,Consistency,Order Status Valid Values,domain_check,62,62,0,100.00,medium,All statuses are valid
+2024-06-09,Consistency,Payment Method Valid Values,domain_check,62,62,0,100.00,low,All payment methods are valid
+2024-06-09,Timeliness,Recent Orders (Last 30 Days),freshness_check,62,49,13,79.03,medium,13 orders older than 30 days
+2024-06-16,Completeness,Customer ID Not Null,null_check,65,62,3,95.38,medium,3 orders missing customer_id
+2024-06-16,Completeness,Customer Email Not Null,null_check,65,62,3,95.38,medium,3 orders missing customer_email
+2024-06-16,Completeness,Product ID Not Null,null_check,65,64,1,98.46,high,1 order missing product_id
+2024-06-16,Accuracy,Email Format Validation,format_check,65,64,1,98.46,medium,1 email with invalid format
+2024-06-16,Accuracy,Total Amount Calculation,calculation_check,65,65,0,100.00,high,All amounts match quantity * unit_price
+2024-06-16,Consistency,Order Status Valid Values,domain_check,65,65,0,100.00,medium,All statuses are valid
+2024-06-16,Consistency,Payment Method Valid Values,domain_check,65,65,0,100.00,low,All payment methods are valid
+2024-06-16,Timeliness,Recent Orders (Last 30 Days),freshness_check,65,51,14,78.46,medium,14 orders older than 30 days
+2024-06-23,Completeness,Customer ID Not Null,null_check,68,65,3,95.59,medium,3 orders missing customer_id
+2024-06-23,Completeness,Customer Email Not Null,null_check,68,65,3,95.59,medium,3 orders missing customer_email
+2024-06-23,Completeness,Product ID Not Null,null_check,68,67,1,98.53,high,1 order missing product_id
+2024-06-23,Accuracy,Email Format Validation,format_check,68,67,1,98.53,medium,1 email with invalid format
+2024-06-23,Accuracy,Total Amount Calculation,calculation_check,68,68,0,100.00,high,All amounts match quantity * unit_price
+2024-06-23,Consistency,Order Status Valid Values,domain_check,68,68,0,100.00,medium,All statuses are valid
+2024-06-23,Consistency,Payment Method Valid Values,domain_check,68,68,0,100.00,low,All payment methods are valid
+2024-06-23,Timeliness,Recent Orders (Last 30 Days),freshness_check,68,53,15,77.94,medium,15 orders older than 30 days
+2024-06-30,Completeness,Customer ID Not Null,null_check,70,67,3,95.71,medium,3 orders missing customer_id
+2024-06-30,Completeness,Customer Email Not Null,null_check,70,67,3,95.71,medium,3 orders missing customer_email
+2024-06-30,Completeness,Product ID Not Null,null_check,70,69,1,98.57,high,1 order missing product_id
+2024-06-30,Accuracy,Email Format Validation,format_check,70,69,1,98.57,medium,1 email with invalid format
+2024-06-30,Accuracy,Total Amount Calculation,calculation_check,70,70,0,100.00,high,All amounts match quantity * unit_price
+2024-06-30,Consistency,Order Status Valid Values,domain_check,70,70,0,100.00,medium,All statuses are valid
+2024-06-30,Consistency,Payment Method Valid Values,domain_check,70,70,0,100.00,low,All payment methods are valid
+2024-06-30,Timeliness,Recent Orders (Last 30 Days),freshness_check,70,55,15,78.57,medium,15 orders older than 30 days
+2024-07-07,Completeness,Customer ID Not Null,null_check,72,69,3,95.83,medium,3 orders missing customer_id
+2024-07-07,Completeness,Customer Email Not Null,null_check,72,69,3,95.83,medium,3 orders missing customer_email
+2024-07-07,Completeness,Product ID Not Null,null_check,72,71,1,98.61,high,1 order missing product_id
+2024-07-07,Accuracy,Email Format Validation,format_check,72,71,1,98.61,medium,1 email with invalid format
+2024-07-07,Accuracy,Total Amount Calculation,calculation_check,72,72,0,100.00,high,All amounts match quantity * unit_price
+2024-07-07,Consistency,Order Status Valid Values,domain_check,72,72,0,100.00,medium,All statuses are valid
+2024-07-07,Consistency,Payment Method Valid Values,domain_check,72,72,0,100.00,low,All payment methods are valid
+2024-07-07,Timeliness,Recent Orders (Last 30 Days),freshness_check,72,56,16,77.78,medium,16 orders older than 30 days
+2024-07-14,Completeness,Customer ID Not Null,null_check,75,72,3,96.00,medium,3 orders missing customer_id
+2024-07-14,Completeness,Customer Email Not Null,null_check,75,72,3,96.00,medium,3 orders missing customer_email
+2024-07-14,Completeness,Product ID Not Null,null_check,75,74,1,98.67,high,1 order missing product_id
+2024-07-14,Accuracy,Email Format Validation,format_check,75,74,1,98.67,medium,1 email with invalid format
+2024-07-14,Accuracy,Total Amount Calculation,calculation_check,75,75,0,100.00,high,All amounts match quantity * unit_price
+2024-07-14,Consistency,Order Status Valid Values,domain_check,75,75,0,100.00,medium,All statuses are valid
+2024-07-14,Consistency,Payment Method Valid Values,domain_check,75,75,0,100.00,low,All payment methods are valid
+2024-07-14,Timeliness,Recent Orders (Last 30 Days),freshness_check,75,58,17,77.33,medium,17 orders older than 30 days
+2024-07-21,Completeness,Customer ID Not Null,null_check,78,75,3,96.15,medium,3 orders missing customer_id
+2024-07-21,Completeness,Customer Email Not Null,null_check,78,75,3,96.15,medium,3 orders missing customer_email
+2024-07-21,Completeness,Product ID Not Null,null_check,78,77,1,98.72,high,1 order missing product_id
+2024-07-21,Accuracy,Email Format Validation,format_check,78,77,1,98.72,medium,1 email with invalid format
+2024-07-21,Accuracy,Total Amount Calculation,calculation_check,78,78,0,100.00,high,All amounts match quantity * unit_price
+2024-07-21,Consistency,Order Status Valid Values,domain_check,78,78,0,100.00,medium,All statuses are valid
+2024-07-21,Consistency,Payment Method Valid Values,domain_check,78,78,0,100.00,low,All payment methods are valid
+2024-07-21,Timeliness,Recent Orders (Last 30 Days),freshness_check,78,60,18,76.92,medium,18 orders older than 30 days
+2024-07-28,Completeness,Customer ID Not Null,null_check,80,77,3,96.25,medium,3 orders missing customer_id
+2024-07-28,Completeness,Customer Email Not Null,null_check,80,77,3,96.25,medium,3 orders missing customer_email
+2024-07-28,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id
+2024-07-28,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format
+2024-07-28,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-07-28,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-07-28,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-07-28,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,62,18,77.50,medium,18 orders older than 30 days
+2024-08-04,Completeness,Customer ID Not Null,null_check,82,79,3,96.34,medium,3 orders missing customer_id
+2024-08-04,Completeness,Customer Email Not Null,null_check,82,79,3,96.34,medium,3 orders missing customer_email
+2024-08-04,Completeness,Product ID Not Null,null_check,82,81,1,98.78,high,1 order missing product_id
+2024-08-04,Accuracy,Email Format Validation,format_check,82,81,1,98.78,medium,1 email with invalid format
+2024-08-04,Accuracy,Total Amount Calculation,calculation_check,82,82,0,100.00,high,All amounts match quantity * unit_price
+2024-08-04,Consistency,Order Status Valid Values,domain_check,82,82,0,100.00,medium,All statuses are valid
+2024-08-04,Consistency,Payment Method Valid Values,domain_check,82,82,0,100.00,low,All payment methods are valid
+2024-08-04,Timeliness,Recent Orders (Last 30 Days),freshness_check,82,63,19,76.83,medium,19 orders older than 30 days
+2024-08-11,Completeness,Customer ID Not Null,null_check,85,82,3,96.47,medium,3 orders missing customer_id
+2024-08-11,Completeness,Customer Email Not Null,null_check,85,82,3,96.47,medium,3 orders missing customer_email
+2024-08-11,Completeness,Product ID Not Null,null_check,85,84,1,98.82,high,1 order missing product_id
+2024-08-11,Accuracy,Email Format Validation,format_check,85,84,1,98.82,medium,1 email with invalid format
+2024-08-11,Accuracy,Total Amount Calculation,calculation_check,85,85,0,100.00,high,All amounts match quantity * unit_price
+2024-08-11,Consistency,Order Status Valid Values,domain_check,85,85,0,100.00,medium,All statuses are valid
+2024-08-11,Consistency,Payment Method Valid Values,domain_check,85,85,0,100.00,low,All payment methods are valid
+2024-08-11,Timeliness,Recent Orders (Last 30 Days),freshness_check,85,65,20,76.47,medium,20 orders older than 30 days
+2024-08-18,Completeness,Customer ID Not Null,null_check,88,85,3,96.59,medium,3 orders missing customer_id
+2024-08-18,Completeness,Customer Email Not Null,null_check,88,85,3,96.59,medium,3 orders missing customer_email
+2024-08-18,Completeness,Product ID Not Null,null_check,88,87,1,98.86,high,1 order missing product_id
+2024-08-18,Accuracy,Email Format Validation,format_check,88,87,1,98.86,medium,1 email with invalid format
+2024-08-18,Accuracy,Total Amount Calculation,calculation_check,88,88,0,100.00,high,All amounts match quantity * unit_price
+2024-08-18,Consistency,Order Status Valid Values,domain_check,88,88,0,100.00,medium,All statuses are valid
+2024-08-18,Consistency,Payment Method Valid Values,domain_check,88,88,0,100.00,low,All payment methods are valid
+2024-08-18,Timeliness,Recent Orders (Last 30 Days),freshness_check,88,67,21,76.14,medium,21 orders older than 30 days
+2024-08-25,Completeness,Customer ID Not Null,null_check,90,87,3,96.67,medium,3 orders missing customer_id
+2024-08-25,Completeness,Customer Email Not Null,null_check,90,87,3,96.67,medium,3 orders missing customer_email
+2024-08-25,Completeness,Product ID Not Null,null_check,90,89,1,98.89,high,1 order missing product_id
+2024-08-25,Accuracy,Email Format Validation,format_check,90,89,1,98.89,medium,1 email with invalid format
+2024-08-25,Accuracy,Total Amount Calculation,calculation_check,90,90,0,100.00,high,All amounts match quantity * unit_price
+2024-08-25,Consistency,Order Status Valid Values,domain_check,90,90,0,100.00,medium,All statuses are valid
+2024-08-25,Consistency,Payment Method Valid Values,domain_check,90,90,0,100.00,low,All payment methods are valid
+2024-08-25,Timeliness,Recent Orders (Last 30 Days),freshness_check,90,69,21,76.67,medium,21 orders older than 30 days
+2024-09-01,Completeness,Customer ID Not Null,null_check,92,88,4,95.65,medium,4 orders missing customer_id
+2024-09-01,Completeness,Customer Email Not Null,null_check,92,88,4,95.65,medium,4 orders missing customer_email
+2024-09-01,Completeness,Product ID Not Null,null_check,92,91,1,98.91,high,1 order missing product_id
+2024-09-01,Accuracy,Email Format Validation,format_check,92,91,1,98.91,medium,1 email with invalid format
+2024-09-01,Accuracy,Total Amount Calculation,calculation_check,92,92,0,100.00,high,All amounts match quantity * unit_price
+2024-09-01,Consistency,Order Status Valid Values,domain_check,92,92,0,100.00,medium,All statuses are valid
+2024-09-01,Consistency,Payment Method Valid Values,domain_check,92,92,0,100.00,low,All payment methods are valid
+2024-09-01,Timeliness,Recent Orders (Last 30 Days),freshness_check,92,70,22,76.09,medium,22 orders older than 30 days
+2024-09-08,Completeness,Customer ID Not Null,null_check,95,90,5,94.74,medium,5 orders missing customer_id
+2024-09-08,Completeness,Customer Email Not Null,null_check,95,90,5,94.74,medium,5 orders missing customer_email
+2024-09-08,Completeness,Product ID Not Null,null_check,95,94,1,98.95,high,1 order missing product_id
+2024-09-08,Accuracy,Email Format Validation,format_check,95,94,1,98.95,medium,1 email with invalid format
+2024-09-08,Accuracy,Total Amount Calculation,calculation_check,95,95,0,100.00,high,All amounts match quantity * unit_price
+2024-09-08,Consistency,Order Status Valid Values,domain_check,95,95,0,100.00,medium,All statuses are valid
+2024-09-08,Consistency,Payment Method Valid Values,domain_check,95,95,0,100.00,low,All payment methods are valid
+2024-09-08,Timeliness,Recent Orders (Last 30 Days),freshness_check,95,72,23,75.79,medium,23 orders older than 30 days
+2024-09-15,Completeness,Customer ID Not Null,null_check,98,93,5,94.90,medium,5 orders missing customer_id
+2024-09-15,Completeness,Customer Email Not Null,null_check,98,93,5,94.90,medium,5 orders missing customer_email
+2024-09-15,Completeness,Product ID Not Null,null_check,98,97,1,98.98,high,1 order missing product_id
+2024-09-15,Accuracy,Email Format Validation,format_check,98,97,1,98.98,medium,1 email with invalid format
+2024-09-15,Accuracy,Total Amount Calculation,calculation_check,98,98,0,100.00,high,All amounts match quantity * unit_price
+2024-09-15,Consistency,Order Status Valid Values,domain_check,98,98,0,100.00,medium,All statuses are valid
+2024-09-15,Consistency,Payment Method Valid Values,domain_check,98,98,0,100.00,low,All payment methods are valid
+2024-09-15,Timeliness,Recent Orders (Last 30 Days),freshness_check,98,74,24,75.51,medium,24 orders older than 30 days
+2024-09-22,Completeness,Customer ID Not Null,null_check,100,95,5,95.00,medium,5 orders missing customer_id
+2024-09-22,Completeness,Customer Email Not Null,null_check,100,95,5,95.00,medium,5 orders missing customer_email
+2024-09-22,Completeness,Product ID Not Null,null_check,100,99,1,99.00,high,1 order missing product_id
+2024-09-22,Accuracy,Email Format Validation,format_check,100,99,1,99.00,medium,1 email with invalid format
+2024-09-22,Accuracy,Total Amount Calculation,calculation_check,100,100,0,100.00,high,All amounts match quantity * unit_price
+2024-09-22,Consistency,Order Status Valid Values,domain_check,100,100,0,100.00,medium,All statuses are valid
+2024-09-22,Consistency,Payment Method Valid Values,domain_check,100,100,0,100.00,low,All payment methods are valid
+2024-09-22,Timeliness,Recent Orders (Last 30 Days),freshness_check,100,76,24,76.00,medium,24 orders older than 30 days
+2024-09-29,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-09-29,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-09-29,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-09-29,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-09-29,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-09-29,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-09-29,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-09-29,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-10-06,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-10-06,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-10-06,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-10-06,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-10-06,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-10-06,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-10-06,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-10-06,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-10-13,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-10-13,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-10-13,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-10-13,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-10-13,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-10-13,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-10-13,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-10-13,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-10-20,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-10-20,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-10-20,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-10-20,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-10-20,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-10-20,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-10-20,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-10-20,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-10-27,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-10-27,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-10-27,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-10-27,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-10-27,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-10-27,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-10-27,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-10-27,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-11-03,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-11-03,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-11-03,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-11-03,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-11-03,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-11-03,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-11-03,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-11-03,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-11-10,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-11-10,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-11-10,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-11-10,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-11-10,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-11-10,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-11-10,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-11-10,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-11-17,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-11-17,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-11-17,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-11-17,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-11-17,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-11-17,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-11-17,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-11-17,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
+2024-11-24,Completeness,Customer ID Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_id (last 80 records analyzed)
+2024-11-24,Completeness,Customer Email Not Null,null_check,80,76,4,95.00,medium,4 orders missing customer_email (last 80 records)
+2024-11-24,Completeness,Product ID Not Null,null_check,80,79,1,98.75,high,1 order missing product_id (last 80 records)
+2024-11-24,Accuracy,Email Format Validation,format_check,80,79,1,98.75,medium,1 email with invalid format (last 80 records)
+2024-11-24,Accuracy,Total Amount Calculation,calculation_check,80,80,0,100.00,high,All amounts match quantity * unit_price
+2024-11-24,Consistency,Order Status Valid Values,domain_check,80,80,0,100.00,medium,All statuses are valid
+2024-11-24,Consistency,Payment Method Valid Values,domain_check,80,80,0,100.00,low,All payment methods are valid
+2024-11-24,Timeliness,Recent Orders (Last 30 Days),freshness_check,80,78,2,97.50,medium,2 orders older than 30 days
