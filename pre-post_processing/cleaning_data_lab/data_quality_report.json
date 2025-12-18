@@ -1,0 +1,38 @@
+{
+  "dataset_name": "Customer Orders Dataset",
+  "timestamp": "2025-11-24T16:34:56.021598",
+  "dimensions": {
+    "Completeness": {
+      "score": NaN,
+      "missing_by_column": {
+        "404: Not Found": {
+          "count": "0",
+          "percentage": NaN
+        }
+      },
+      "total_missing": "0"
+    },
+    "Uniqueness": {
+      "score": NaN,
+      "exact_duplicates": "0",
+      "duplicate_percentage": 0
+    },
+    "Validity": {
+      "score": 100,
+      "issues": {}
+    },
+    "Consistency": {
+      "score": 100,
+      "issues": {}
+    },
+    "Accuracy": {
+      "score": 100,
+      "issues": {}
+    },
+    "Timeliness": {
+      "score": 100,
+      "issues": {}
+    },
+    "Overall_Score": NaN
+  }
+}

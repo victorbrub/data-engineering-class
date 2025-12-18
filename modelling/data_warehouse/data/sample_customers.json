@@ -1,0 +1,30 @@
+[
+  {
+    "customer_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "country": "USA",
+    "created_at": "2024-01-01"
+  },
+  {
+    "customer_id": 2,
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "country": "Canada",
+    "created_at": "2024-01-05"
+  },
+  {
+    "customer_id": 3,
+    "name": "Carlos Garcia",
+    "email": "carlos@example.com",
+    "country": "Mexico",
+    "created_at": "2024-01-10"
+  },
+  {
+    "customer_id": 4,
+    "name": "Diana Chen",
+    "email": "diana@example.com",
+    "country": "USA",
+    "created_at": "2024-01-12"
+  }
+]

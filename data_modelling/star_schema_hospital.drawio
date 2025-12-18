@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" modified="2024-11-30T00:00:00.000Z" agent="draw.io" version="22.0.0">
+  <diagram name="Star Schema - Hospital" id="star-schema-hospital">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Fact Table (Center) -->
+        <mxCell id="fact_admission" value="&lt;b&gt;FACT_PATIENT_ADMISSION&lt;/b&gt;&lt;hr&gt;admission_id (PK)&lt;br&gt;patient_key (FK)&lt;br&gt;admitting_doctor_key (FK)&lt;br&gt;attending_doctor_key (FK)&lt;br&gt;department_key (FK)&lt;br&gt;admission_date_key (FK)&lt;br&gt;discharge_date_key (FK)&lt;br&gt;diagnosis_key (FK)&lt;br&gt;room_key (FK)&lt;br&gt;insurance_key (FK)&lt;hr&gt;&lt;b&gt;Measures:&lt;/b&gt;&lt;br&gt;length_of_stay_days&lt;br&gt;total_cost&lt;br&gt;medication_cost&lt;br&gt;procedure_cost&lt;br&gt;room_cost&lt;br&gt;patient_satisfaction_score&lt;br&gt;is_readmission&lt;br&gt;days_until_readmission" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="530" y="330" width="240" height="340" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_patient -->
+        <mxCell id="dim_patient" value="&lt;b&gt;DIM_PATIENT&lt;/b&gt;&lt;hr&gt;patient_key (PK)&lt;br&gt;patient_id&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;birth_date&lt;br&gt;gender&lt;br&gt;blood_type&lt;br&gt;address&lt;br&gt;city&lt;br&gt;province&lt;br&gt;country&lt;br&gt;phone&lt;br&gt;email&lt;br&gt;&lt;i&gt;SCD Type 2 fields&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="160" height="220" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_doctor -->
+        <mxCell id="dim_doctor" value="&lt;b&gt;DIM_DOCTOR&lt;/b&gt;&lt;hr&gt;doctor_key (PK)&lt;br&gt;doctor_id&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;specialty&lt;br&gt;sub_specialty&lt;br&gt;department&lt;br&gt;license_number&lt;br&gt;years_of_experience&lt;br&gt;education&lt;br&gt;is_active&lt;br&gt;&lt;i&gt;SCD Type 2 fields&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="960" y="150" width="180" height="200" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_department -->
+        <mxCell id="dim_department" value="&lt;b&gt;DIM_DEPARTMENT&lt;/b&gt;&lt;hr&gt;department_key (PK)&lt;br&gt;department_id&lt;br&gt;department_name&lt;br&gt;department_type&lt;br&gt;floor_number&lt;br&gt;building&lt;br&gt;head_doctor_name&lt;br&gt;phone_extension&lt;br&gt;budget_amount&lt;br&gt;is_active" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="960" y="420" width="180" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_diagnosis -->
+        <mxCell id="dim_diagnosis" value="&lt;b&gt;DIM_DIAGNOSIS&lt;/b&gt;&lt;hr&gt;diagnosis_key (PK)&lt;br&gt;diagnosis_code&lt;br&gt;diagnosis_name&lt;br&gt;category&lt;br&gt;severity&lt;br&gt;is_chronic&lt;br&gt;average_treatment_days&lt;br&gt;requires_surgery" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="480" width="180" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_insurance -->
+        <mxCell id="dim_insurance" value="&lt;b&gt;DIM_INSURANCE&lt;/b&gt;&lt;hr&gt;insurance_key (PK)&lt;br&gt;insurance_provider&lt;br&gt;plan_type&lt;br&gt;coverage_percentage&lt;br&gt;max_coverage_amount&lt;br&gt;copay_amount&lt;br&gt;deductible_amount&lt;br&gt;is_active" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="700" width="180" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_room -->
+        <mxCell id="dim_room" value="&lt;b&gt;DIM_ROOM&lt;/b&gt;&lt;hr&gt;room_key (PK)&lt;br&gt;room_number&lt;br&gt;room_type&lt;br&gt;floor_number&lt;br&gt;building&lt;br&gt;bed_count&lt;br&gt;has_equipment&lt;br&gt;daily_rate&lt;br&gt;is_available" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="960" y="680" width="160" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_date_admission -->
+        <mxCell id="dim_date_admission" value="&lt;b&gt;DIM_DATE&lt;/b&gt;&lt;br&gt;(Admission)&lt;hr&gt;date_key (PK)&lt;br&gt;full_date&lt;br&gt;day_of_week&lt;br&gt;month_name&lt;br&gt;quarter&lt;br&gt;year&lt;br&gt;is_weekend&lt;br&gt;is_holiday" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="150" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_date_discharge -->
+        <mxCell id="dim_date_discharge" value="&lt;b&gt;DIM_DATE&lt;/b&gt;&lt;br&gt;(Discharge)&lt;hr&gt;date_key (PK)&lt;br&gt;full_date&lt;br&gt;day_of_week&lt;br&gt;month_name&lt;br&gt;quarter&lt;br&gt;year&lt;br&gt;is_weekend&lt;br&gt;is_holiday" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="740" y="80" width="150" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections -->
+        <mxCell id="edge1" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_patient">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge2" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_doctor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge3" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_department">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge4" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.65;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_diagnosis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge5" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.9;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_insurance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge6" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_room">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge7" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_date_admission">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge8" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_admission" target="dim_date_discharge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Title -->
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Star Schema - Hospital Patient Admissions&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend_title" value="&lt;b&gt;Legend:&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="920" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_fact" value="Fact Table (Measures)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="950" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_dim" value="Dimension Table (Context)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="950" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Notes -->
+        <mxCell id="note1" value="&lt;b&gt;Note:&lt;/b&gt; dim_doctor is used twice&lt;br&gt;(admitting_doctor and attending_doctor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=5;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="720" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="note2" value="&lt;b&gt;SCD Type 2:&lt;/b&gt;&lt;br&gt;• dim_patient (address, insurance changes)&lt;br&gt;• dim_doctor (specialty, department changes)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=5;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="640" y="720" width="280" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

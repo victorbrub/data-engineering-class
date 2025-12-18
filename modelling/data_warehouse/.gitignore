@@ -1,0 +1,40 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Configuration files with secrets
+config.yaml
+*.secret
+
+# Logs
+*.log
+upload_data.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (optional - uncomment if you don't want to commit data)
+# data/*.csv
+# data/*.json

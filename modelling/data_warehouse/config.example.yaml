@@ -1,0 +1,19 @@
+# PostgreSQL Connection Configuration
+database:
+  host: ""  # Full server hostname (e.g., pg-datawarehouse-12345.postgres.database.azure.com)
+  port: 5432  # PostgreSQL port number (default: 5432)
+  database: "datawarehouse"  # Name of the database to connect to
+  user: "pgadmin"  # Database admin username
+  password: ""  # Database admin password - REQUIRED: Add your password here
+  sslmode: "require"  # SSL/TLS mode (require, prefer, disable) - keep as 'require' for Azure
+
+# Azure Resource Information
+azure:
+  resource_group: "pg-datawarehouse-rg"  # Azure resource group name where PostgreSQL server is deployed
+  server_name: ""  # Azure PostgreSQL server name (without the .postgres.database.azure.com suffix)
+  location: "eastus"  # Azure region where resources are deployed (e.g., eastus, westus2, westeurope)
+
+# Data upload settings
+upload:
+  chunk_size: 1000  # Number of rows to insert per batch (increase for better performance with large files)
+  data_directory: "./data"  # Default directory path containing CSV/JSON files to upload

@@ -1,0 +1,15 @@
+# Azure SDK for Event Hubs
+azure-eventhub==5.11.6
+
+# Azure CLI libraries
+azure-cli==2.56.0
+azure-cli-core==2.56.0
+
+# Additional utilities
+python-dotenv==1.0.0
+requests==2.31.0
+jsonschema==4.21.1
+
+# For development/testing
+pytest==7.4.4
+pytest-asyncio==0.23.2

@@ -1,0 +1,132 @@
+#!/bin/bash
+# Example setup.sh with integrated requirements detection
+# This shows how to use check_requirements.sh in your setup scripts
+
+set -e
+
+echo "╔════════════════════════════════════════════════════════════╗"
+echo "║  Project Setup with Requirements Detection                ║"
+echo "╚════════════════════════════════════════════════════════════╝"
+echo ""
+
+# Check Python
+if ! command -v python3 &> /dev/null; then
+    echo "❌ Python 3 is not installed. Please install Python 3.8 or higher."
+    exit 1
+fi
+echo "✓ Python 3 found: $(python3 --version)"
+
+# ============================================================
+# STEP 1: Check and update requirements (NEW FUNCTIONALITY)
+# ============================================================
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "STEP 1: Requirements Detection"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Find the requirements_tools directory
+find_tools() {
+    local current="$PWD"
+    while [ "$current" != "/" ]; do
+        if [ -f "$current/teacher/requirements_tools/check_requirements.sh" ]; then
+            echo "$current/teacher/requirements_tools"
+            return 0
+        fi
+        current="$(dirname "$current")"
+    done
+    return 1
+}
+
+TOOLS_DIR=$(find_tools)
+
+if [ -n "$TOOLS_DIR" ]; then
+    # Source the check_requirements script
+    source "${TOOLS_DIR}/check_requirements.sh"
+    
+    # Run requirements check (auto-update without prompting)
+    check_and_update_requirements "." true
+else
+    echo "⚠️  Requirements detection tool not found, using existing requirements.txt"
+fi
+
+# ============================================================
+# STEP 2: Virtual Environment Setup
+# ============================================================
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "STEP 2: Virtual Environment"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+if [ ! -d "venv" ]; then
+    echo "Creating Python virtual environment..."
+    python3 -m venv venv
+    echo "✓ Virtual environment created"
+else
+    echo "✓ Virtual environment already exists"
+fi
+
+# Activate virtual environment
+echo "Activating virtual environment..."
+source venv/bin/activate
+echo "✓ Virtual environment activated"
+
+# ============================================================
+# STEP 3: Install Dependencies
+# ============================================================
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "STEP 3: Installing Dependencies"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Upgrade pip
+echo "Upgrading pip..."
+pip install --upgrade pip --quiet
+echo "✓ pip upgraded"
+
+# Install dependencies
+if [ -f "requirements.txt" ]; then
+    echo "Installing Python dependencies..."
+    pip install -r requirements.txt --quiet
+    echo "✓ Dependencies installed"
+else
+    echo "⚠️  No requirements.txt found, skipping installation"
+fi
+
+# ============================================================
+# STEP 4: Configuration
+# ============================================================
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "STEP 4: Configuration"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Create config from example if exists
+if [ -f "config.example.yaml" ] && [ ! -f "config.yaml" ]; then
+    echo "Creating config.yaml from template..."
+    cp config.example.yaml config.yaml
+    echo "✓ config.yaml created"
+    echo "⚠️  Remember to edit config.yaml with your settings!"
+elif [ -f "config.yaml" ]; then
+    echo "✓ config.yaml already exists"
+else
+    echo "ℹ️  No configuration template found"
+fi
+
+# ============================================================
+# SETUP COMPLETE
+# ============================================================
+echo ""
+echo "╔════════════════════════════════════════════════════════════╗"
+echo "║  ✅ Setup Complete!                                        ║"
+echo "╚════════════════════════════════════════════════════════════╝"
+echo ""
+echo "Next steps:"
+echo "  1. Activate the virtual environment:"
+echo "     source venv/bin/activate"
+echo ""
+echo "  2. Run your Python scripts:"
+echo "     python3 your_script.py"
+echo ""
+echo "  3. To update requirements in the future:"
+echo "     python3 ../../teacher/requirements_tools/detect_requirements.py"
+echo ""

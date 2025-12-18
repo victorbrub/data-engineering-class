@@ -1,0 +1,140 @@
+<mxfile host="app.diagrams.net" modified="2024-11-30T00:00:00.000Z" agent="draw.io" version="22.0.0">
+  <diagram name="Snowflake Schema - E-commerce" id="snowflake-schema-ecommerce">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Fact Table (Center) -->
+        <mxCell id="fact_sales" value="&lt;b&gt;FACT_SALES&lt;/b&gt;&lt;hr&gt;sale_id (PK)&lt;br&gt;date_key (FK)&lt;br&gt;customer_key (FK)&lt;br&gt;product_key (FK)&lt;br&gt;store_key (FK)&lt;hr&gt;quantity&lt;br&gt;unit_price&lt;br&gt;discount_amount&lt;br&gt;total_amount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="350" width="180" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_date -->
+        <mxCell id="dim_date" value="&lt;b&gt;DIM_DATE&lt;/b&gt;&lt;hr&gt;date_key (PK)&lt;br&gt;full_date&lt;br&gt;day_of_week&lt;br&gt;month_name&lt;br&gt;quarter&lt;br&gt;year&lt;br&gt;is_weekend&lt;br&gt;is_holiday" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="610" y="100" width="160" height="140" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_customer -->
+        <mxCell id="dim_customer" value="&lt;b&gt;DIM_CUSTOMER&lt;/b&gt;&lt;hr&gt;customer_key (PK)&lt;br&gt;customer_id&lt;br&gt;name&lt;br&gt;email&lt;br&gt;age&lt;br&gt;segment_key (FK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_customer_segment (normalized from customer) -->
+        <mxCell id="dim_segment" value="&lt;b&gt;DIM_CUSTOMER_SEGMENT&lt;/b&gt;&lt;hr&gt;segment_key (PK)&lt;br&gt;segment_name&lt;br&gt;segment_description&lt;br&gt;discount_rate" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="60" width="180" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_location (normalized from customer) -->
+        <mxCell id="dim_location" value="&lt;b&gt;DIM_LOCATION&lt;/b&gt;&lt;hr&gt;location_key (PK)&lt;br&gt;city&lt;br&gt;region_key (FK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="420" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_region (normalized from location) -->
+        <mxCell id="dim_region" value="&lt;b&gt;DIM_REGION&lt;/b&gt;&lt;hr&gt;region_key (PK)&lt;br&gt;region_name&lt;br&gt;country" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="560" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_product -->
+        <mxCell id="dim_product" value="&lt;b&gt;DIM_PRODUCT&lt;/b&gt;&lt;hr&gt;product_key (PK)&lt;br&gt;product_id&lt;br&gt;product_name&lt;br&gt;unit_cost&lt;br&gt;brand_key (FK)&lt;br&gt;category_key (FK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="270" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_brand (normalized from product) -->
+        <mxCell id="dim_brand" value="&lt;b&gt;DIM_BRAND&lt;/b&gt;&lt;hr&gt;brand_key (PK)&lt;br&gt;brand_name&lt;br&gt;country&lt;br&gt;founded_year" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="60" width="160" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_category (normalized from product) -->
+        <mxCell id="dim_category" value="&lt;b&gt;DIM_CATEGORY&lt;/b&gt;&lt;hr&gt;category_key (PK)&lt;br&gt;category_name&lt;br&gt;subcategory&lt;br&gt;department" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="450" width="160" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- dim_store -->
+        <mxCell id="dim_store" value="&lt;b&gt;DIM_STORE&lt;/b&gt;&lt;hr&gt;store_key (PK)&lt;br&gt;store_id&lt;br&gt;store_name&lt;br&gt;store_type&lt;br&gt;region_key (FK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="610" y="610" width="160" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections from Fact to Dimensions -->
+        <mxCell id="edge1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_sales" target="dim_date">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge2" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_sales" target="dim_customer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge3" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_sales" target="dim_product">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fact_sales" target="dim_store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections from Dimensions to Sub-dimensions -->
+        <mxCell id="edge5" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="dim_customer" target="dim_segment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="dim_customer" target="dim_location">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="dim_location" target="dim_region">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="dim_product" target="dim_brand">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="dim_product" target="dim_category">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#b85450;dashed=1;exitPerimeter=0;" edge="1" parent="1" source="dim_store" target="dim_region">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="730" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="690" y="750" />
+              <mxPoint x="400" y="750" />
+              <mxPoint x="230" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Title -->
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;Snowflake Schema - E-commerce Sales (Normalized)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend_title" value="&lt;b&gt;Legend:&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="780" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_fact" value="Fact Table" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_dim" value="Main Dimension" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="180" y="810" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_subdim" value="Sub-dimension (Level 2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="320" y="810" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_subdim2" value="Sub-dimension (Level 3)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="490" y="810" width="150" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Notes -->
+        <mxCell id="note1" value="&lt;b&gt;Normalized Structure:&lt;/b&gt;&lt;br&gt;• More tables, less redundancy&lt;br&gt;• More joins required (slower queries)&lt;br&gt;• Easier to maintain consistency&lt;br&gt;• Better for storage optimization" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=5;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="900" y="610" width="220" height="110" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="note2" value="&lt;b&gt;Example Hierarchies:&lt;/b&gt;&lt;br&gt;Customer → Location → Region&lt;br&gt;Product → Brand&lt;br&gt;Product → Category&lt;br&gt;Store → Region" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacingLeft=5;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="610" width="200" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
