@@ -1,0 +1,46 @@
+# -----------------------------------------------------------
+# 1. COMMENTS
+# Lines starting with '#' are ignored by Git.
+# Use them to organize your file.
+# -----------------------------------------------------------
+
+# -----------------------------------------------------------
+# 2. SPECIFIC FILES
+# Ignore specific files that should never be shared.
+# -----------------------------------------------------------
+.env                # Contains API keys and passwords (SECURITY RISK!)
+secrets.txt         # A personal notes file
+todo-list.md        # A personal to-do list not for the team
+
+# -----------------------------------------------------------
+# 3. WILDCARDS (EXTENSIONS)
+# Use '*' to match any characters.
+# -----------------------------------------------------------
+*.log               # Ignore ANY file ending in .log
+*.tmp               # Ignore ANY file ending in .tmp
+temp-*              # Ignore files starting with "temp-" (e.g., temp-01.txt)
+
+# -----------------------------------------------------------
+# 4. DIRECTORIES (FOLDERS)
+# Ending with a slash '/' ensures it matches a folder.
+# -----------------------------------------------------------
+node_modules/       # Ignore the entire node_modules folder (External code)
+build/              # Ignore the build output folder
+dist/               # Ignore the distribution folder
+
+# -----------------------------------------------------------
+# 5. EXCEPTIONS (THE '!' RULE)
+# Use '!' to track a file even if it matches an ignore rule.
+# -----------------------------------------------------------
+# First, ignore all .zip files to save space...
+*.zip
+
+# ...BUT, do not ignore this specific zip file containing assets
+!important-assets.zip
+
+# -----------------------------------------------------------
+# 6. SYSTEM FILES
+# Junk files created by your Operating System.
+# -----------------------------------------------------------
+.DS_Store           # macOS folder metadata
+Thumbs.db           # Windows thumbnail cache
